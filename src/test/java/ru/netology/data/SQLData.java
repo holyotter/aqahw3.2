@@ -18,10 +18,9 @@ public class SQLData {
         val cards = "DELETE FROM cards";
 
         try (Connection connection = getConnection()) {
-            runner.update(connection, users);
             runner.update(connection, verificationCodes);
             runner.update(connection, cards);
-
+            runner.update(connection, users);
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
